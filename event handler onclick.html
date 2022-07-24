@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Event World</title>
+        <style>
+            .contents{
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                border: 1px solid black;
+                border-width:2px;
+                padding : 15px;
+            }
+ 
+            #generateButton{
+                margin-top : 5px;
+                margin-bottom: 15px;;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="contents" align="center">
+            <button id="incrementButton">Tekan Aku :)</button>
+            <h3>Kamu sudah menekan tombol di atas sebanyak <span id="count">0</span></h3>
+        </div>
+       
+        <script>
+function increment(){ // fungsi nya apa 
+    document.getElementById("count").innerText++;   // ini element count pada span diatas dipanggil trus panggil 
+                                                    // innertext untuk nambahi data nya (innertext sebuah atribute untuk 
+                                                    //  memanggil sebuah data text pada html)
+}
+document.getElementById("incrementButton").onclick = increment; // nah ini contoh untuk memanggil onclick dan jalani fungsi increment 
+            
+        </script>
+    </body>
+</html>

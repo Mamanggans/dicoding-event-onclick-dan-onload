@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Event handler onload</title>
+        <style>
+            .contents{
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                border: 1px solid black;
+                border-width:2px;
+                padding : 15px;
+            }
+ 
+            #generateButton{
+                margin-top : 5px;
+                margin-bottom: 15px;;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="contents" align="center" hidden>
+            <button id="incrementButton">Tekan Aku :)</button>
+            <h3>Kamu sudah menekan tombol di atas sebanyak <span id="count">0</span></h3>
+        </div>
+       
+        <script>
+            function increment(){
+                document.getElementById("count").innerText++; // handler onclick
+               
+                if (document.getElementById("count").innerText == 7){
+                    
+                    const hiddenMessage = document.createElement("h4"); // buat sebuah element h4 
+                    hiddenMessage.innerText = "Selamat! Anda menemukan hadiah tersembunyi..." // isi dari elemen h4 
+                    const image = document.createElement("img"); // buat dokumen yang berisi sebuah image 
+                    image.setAttribute("src", "https://i.ibb.co/0V49VRZ/catto.jpg"); // isi dari atribute tersebut 
+                    const contents = document.querySelector(".contents"); // manggi si div content 
+                    contents.appendChild(hiddenMessage).appendChild(image); // nambahi semua elemen yang kita bikin dengan appendchild 
+                }
+            }
+         
+            function welcome(){
+                alert("Sim salabim muncullah elemen-elemen HTML!") // handler onload 
+                const contents = document.querySelector(".contents");
+                contents.removeAttribute("hidden");
+            }
+         
+            document.getElementById("incrementButton").onclick = increment;
+            document.body.onload = welcome;
+        </script>
+    </body>
+</html>
